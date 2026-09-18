@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Appointment List</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <h1>Appointment Record System</h1>
+    <a href="index.html">+ Add Appointment</a>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Appointment Details</h2>
+      <div id="alertBox" class="alert"></div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Appointment Date</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="appointmentTableBody">
+          <tr class="empty-row"><td colspan="7">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal-box">
+      <h2>Edit Appointment</h2>
+      <input type="hidden" id="editId" />
+
+      <div class="form-group">
+        <label for="editName">Name</label>
+        <input type="text" id="editName" />
+      </div>
+      <div class="form-group">
+        <label for="editEmail">Email</label>
+        <input type="email" id="editEmail" />
+      </div>
+      <div class="form-group">
+        <label for="editPhone">Phone</label>
+        <input type="number" id="editPhone" />
+      </div>
+      <div class="form-group">
+        <label for="editAppointmentDate">Appointment Date</label>
+        <input type="date" id="editAppointmentDate" />
+      </div>
+      <div class="form-group">
+        <label for="editReason">Reason</label>
+        <input type="text" id="editReason" />
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" id="cancelEditBtn">Cancel</button>
+        <button class="btn-primary" id="updateBtn">Update Appointment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirm Modal -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal-box">
+      <h2>Delete Appointment?</h2>
+      <p>Are you sure you want to delete this record?</p>
+      <input type="hidden" id="deleteId" />
+      <div class="modal-actions">
+        <button class="btn-cancel" id="cancelDeleteBtn">Cancel</button>
+        <button class="btn-delete" id="confirmDeleteBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>
